@@ -1,6 +1,7 @@
 -- Security and user management
 
 -- Create a user for analysis
+-- Note: password used for demonstration purposes only
 CREATE USER analyst WITH PASSWORD 'secure123';
 
 -- Create a read-only role
@@ -15,3 +16,5 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO read_only;
 
 -- Assign role to user
 GRANT read_only TO analyst;
+
+-- Test: analyst can SELECT but cannot INSERT or DELETE
